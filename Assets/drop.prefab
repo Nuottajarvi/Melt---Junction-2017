@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4368108633981264}
   - component: {fileID: 33295048751605344}
   - component: {fileID: 23963978584386832}
-  - component: {fileID: 95789259345890810}
+  - component: {fileID: 114687382838265042}
   m_Layer: 0
   m_Name: drop
   m_TagString: Untagged
@@ -83,20 +83,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651739505510918}
   m_Mesh: {fileID: 4300000, guid: 29d42b28216ea1d4f8437e2037f0c5d8, type: 3}
---- !u!95 &95789259345890810
-Animator:
-  serializedVersion: 3
+--- !u!114 &114687382838265042
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651739505510918}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 29d42b28216ea1d4f8437e2037f0c5d8, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e7c441c222e134cba2a7bd4e6eff3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.25
+  angle: 0
