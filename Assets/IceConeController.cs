@@ -7,7 +7,7 @@ public class IceConeController : MonoBehaviour
     [SerializeField]
     Rigidbody coneBody;
     [SerializeField]
-    BoxCollider tongueCollider;
+    TongueController tongue;
 
 
     void Start()
@@ -29,25 +29,12 @@ public class IceConeController : MonoBehaviour
 
     public void SwipeDone()
     {
-        coneBody.AddTorque(new Vector3(0, lastSwipe, 0), ForceMode.VelocityChange);
+        //coneBody.AddTorque(new Vector3(0, lastSwipe, 0), ForceMode.VelocityChange);
     }
 
-
-    private Collider[] hitDrops = new Collider[50];
-    public void LickTapped()
+    public void LickTapped(float pos)
     {
-        coneBody.AddTorque(Vector3.zero, ForceMode.VelocityChange);
-
-        var hitCount = Physics.OverlapBoxNonAlloc(tongueCollider.center, tongueCollider.size / 2, hitDrops);
-
-        if (hitCount > 0)
-        {
-            GameController.instance.score += hitCount;
-        }
-
-        for (int i = 0; i < hitCount; i++)
-        {
-            Destroy(hitDrops[i].gameObject);
-        }
+        tongue.SetPos(pos);
+		tongue.Lick();
     }
 }

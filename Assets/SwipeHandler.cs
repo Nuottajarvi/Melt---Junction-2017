@@ -32,7 +32,7 @@ public class SwipeHandler : Selectable, IBeginDragHandler, IDragHandler, IEndDra
         }
         // if (leftDeadZone)
         {
-            iceCone.SwipeUpdate((eventData.position - lastPosition).x);
+            iceCone.SwipeUpdate(eventData.delta.x);
         }
 
         lastPosition = eventData.position;
@@ -48,7 +48,7 @@ public class SwipeHandler : Selectable, IBeginDragHandler, IDragHandler, IEndDra
         }
         else
         {
-            iceCone.LickTapped();
+            iceCone.LickTapped(eventData.position.y);
         }
     }
 }
