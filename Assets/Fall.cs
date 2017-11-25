@@ -11,6 +11,7 @@ public class Fall : MonoBehaviour {
 	void Start () {
 		System.Random random = new System.Random();
 		speed *= ((float)random.NextDouble() + 0.5f);
+		speed += GameController.instance.gameTime / 100;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +32,11 @@ public class Fall : MonoBehaviour {
 		} else {
 			transform.rotation = Quaternion.identity;
 			speed += Time.deltaTime * 3;
+		}
+
+		if(transform.position.y < -4) {
+			GameController.instance.health--;
+			Destroy(gameObject);
 		}
 	}
 }

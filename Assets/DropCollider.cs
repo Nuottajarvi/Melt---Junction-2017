@@ -17,7 +17,6 @@ public class DropCollider : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		Debug.Log("DING");
 		drops.Add(other.gameObject);
 	}
 

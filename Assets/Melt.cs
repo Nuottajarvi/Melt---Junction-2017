@@ -35,7 +35,7 @@ public class Melt : MonoBehaviour {
 
 			newdrop.GetComponent<Fall>().angle = angle;
 
-			timer = cooldown * 2 * (float)random.NextDouble();
+			timer = cooldown * 2 * (float)random.NextDouble() - GameController.instance.gameTime / 100;
 		}
 	}
 }
