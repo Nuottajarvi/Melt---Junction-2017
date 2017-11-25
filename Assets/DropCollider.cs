@@ -13,10 +13,11 @@ public class DropCollider : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate(new Vector3(0, Input.GetAxis("Mouse Y") * 0.1f, 0));
+		transform.Translate(new Vector3(0, 0, Input.GetAxis("Mouse Y") * 0.1f));
 	}
 
 	void OnTriggerEnter(Collider other) {
+		Debug.Log("DING");
 		drops.Add(other.gameObject);
 	}
 
