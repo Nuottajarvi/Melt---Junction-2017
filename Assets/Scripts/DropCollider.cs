@@ -2,37 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropCollider : MonoBehaviour {
+public class DropCollider : MonoBehaviour
+{
 
-	List<GameObject> drops;
+    void Update()
+    {
+        transform.Translate(new Vector3(0, Input.GetAxis("Mouse Y") * 0.1f, 0));
+    }
 
-	// Use this for initialization
-	void Start () {
-		drops = new List<GameObject>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		transform.Translate(new Vector3(0, Input.GetAxis("Mouse Y") * 0.1f, 0));
-	}
+    public void DeleteDrops()
+    {
+        // GetComponent<Animator>().SetTrigger("Lick");
 
-	void OnTriggerEnter(Collider other) {
-		drops.Add(other.gameObject);
-	}
+        // Debug.Log(drops.Count);
 
-	void OnTriggerExit(Collider other) {
-		drops.Remove(other.gameObject);
-	}
+        // Physics.BoxCastNonAlloc()
 
-	public void DeleteDrops() {
-
-		GetComponent<Animator>().SetTrigger("Lick");
-
-		Debug.Log(drops.Count);
-		for(int i = drops.Count - 1; i >= 0; i--) {
-			Destroy(drops[i]);
-			drops.RemoveAt(i);
-			GameController.instance.score++;
-		}
-	}
+        // for (int i = drops.Count - 1; i >= 0; i--)
+        // {
+        //     Destroy(drops[i]);
+        //     drops.RemoveAt(i);
+        //     GameController.instance.score++;
+        // }
+    }
 }
