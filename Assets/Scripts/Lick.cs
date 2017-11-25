@@ -7,6 +7,7 @@ public class Lick : MonoBehaviour {
 	public DropCollider drops;
 	public float cooldown;
 	private float maxCD;
+	public Face face;
 
 	// Use this for initialization
 	void Start () {
@@ -16,11 +17,28 @@ public class Lick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< .merge_file_a12036
 		// transform.Rotate(new Vector3(0, 0, Input.GetAxis("Mouse X")) * Time.deltaTime * -100);
 		// cooldown -= Time.deltaTime;
 		// if (Input.GetMouseButtonDown(0) && cooldown < 0 && !GameController.instance.gameOver) {
 		// 	drops.DeleteDrops();
 		// 	cooldown = maxCD;
 		// }
+=======
+		transform.Rotate(new Vector3(0, 0, Input.GetAxis("Mouse X")) * Time.deltaTime * -100);
+		cooldown -= Time.deltaTime;
+		if (Input.GetMouseButtonDown(0) && cooldown < 0 && !GameController.instance.gameOver) {
+			Launch();
+		}
+>>>>>>> .merge_file_a05332
+	}
+
+	void Launch() {
+		drops.DeleteDrops();
+		cooldown = maxCD;
+		if (face.surprisedTrigger > 0)
+			face.surprisedTrigger = 0.99f;
+		else
+			face.surprisedTrigger = 1.5f;
 	}
 }
