@@ -25,8 +25,11 @@ public class DropCollider : MonoBehaviour {
 	}
 
 	public void DeleteDrops() {
-		for(int i = 0; i < drops.Count; i++) {
+		Debug.Log(drops.Count);
+		for(int i = drops.Count - 1; i >= 0; i--) {
 			Destroy(drops[i]);
+			drops.RemoveAt(i);
+			GameController.instance.score++;
 		}
 	}
 }

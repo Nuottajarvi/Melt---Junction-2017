@@ -15,7 +15,7 @@ public class Lick : MonoBehaviour {
 	void Update () {
 		transform.Rotate(new Vector3(0, 0, Input.GetAxis("Mouse X")) * Time.deltaTime * -100);
 
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(0) && !GameController.instance.gameOver) {
 			drops.DeleteDrops();
 		}
 	}

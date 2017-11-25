@@ -12,6 +12,7 @@ public class Fall : MonoBehaviour {
 		System.Random random = new System.Random();
 		speed *= ((float)random.NextDouble() + 0.5f);
 		speed += GameController.instance.gameTime / 100;
+		Debug.Log(GameController.instance.gameTime / 100);
 	}
 	
 	// Update is called once per frame

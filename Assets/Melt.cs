@@ -20,7 +20,7 @@ public class Melt : MonoBehaviour {
 	void Update () {
 		timer -= Time.deltaTime;
 
-		if(timer < 0) {
+		if(timer < 0 && !GameController.instance.gameOver) {
 			GameObject newdrop = Instantiate(drop, transform);
 
 			System.Random random = new System.Random();
