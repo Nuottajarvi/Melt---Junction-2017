@@ -7,6 +7,7 @@ public class Lick : MonoBehaviour {
 	public DropCollider drops;
 	public float cooldown;
 	private float maxCD;
+	public Face face;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +20,16 @@ public class Lick : MonoBehaviour {
 		transform.Rotate(new Vector3(0, 0, Input.GetAxis("Mouse X")) * Time.deltaTime * -100);
 		cooldown -= Time.deltaTime;
 		if (Input.GetMouseButtonDown(0) && cooldown < 0 && !GameController.instance.gameOver) {
-			drops.DeleteDrops();
-			cooldown = maxCD;
+			Launch();
 		}
+	}
+
+	void Launch() {
+		drops.DeleteDrops();
+		cooldown = maxCD;
+		if (face.surprisedTrigger > 0)
+			face.surprisedTrigger = 0.99f;
+		else
+			face.surprisedTrigger = 1.5f;
 	}
 }
