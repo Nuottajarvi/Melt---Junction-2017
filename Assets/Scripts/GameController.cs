@@ -33,4 +33,8 @@ public class GameController: MonoBehaviour {
 			gameOver = true;
 		}
 	}
+
+	void Newgame () {
+		Application.LoadLevel(Application.loadedLevel);
+	}
 }
