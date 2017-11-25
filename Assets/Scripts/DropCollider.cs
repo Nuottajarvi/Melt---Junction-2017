@@ -13,7 +13,7 @@ public class DropCollider : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate(new Vector3(0, 0, Input.GetAxis("Mouse Y") * 0.1f));
+		transform.Translate(new Vector3(0, Input.GetAxis("Mouse Y") * 0.1f, 0));
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -25,6 +25,9 @@ public class DropCollider : MonoBehaviour {
 	}
 
 	public void DeleteDrops() {
+
+		GetComponent<Animator>().SetTrigger("Lick");
+
 		Debug.Log(drops.Count);
 		for(int i = drops.Count - 1; i >= 0; i--) {
 			Destroy(drops[i]);

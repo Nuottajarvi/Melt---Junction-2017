@@ -6,12 +6,26 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Armature
+    100004: Bone
+    100006: Bone_001
+    100008: Bone_002
+    100010: Bone_003
+    100012: Cube
     400000: //RootNode
+    400002: Armature
+    400004: Bone
+    400006: Bone_001
+    400008: Bone_002
+    400010: Bone_003
+    400012: Cube
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
     7400000: Default Take
+    7400002: ArmatureAction
     9500000: //RootNode
+    13700000: Cube
   externalObjects:
   - first:
       type: UnityEngine:Material
