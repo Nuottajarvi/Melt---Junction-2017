@@ -7,7 +7,6 @@ public class MeltingMesh : MonoBehaviour {
 
 	int sideWidth = 10;
 
-	// Use this for initialization
 	void Start () {
 		Mesh mesh = new Mesh();
 		mesh.vertices = CreateParabloid(10, 10);
@@ -17,7 +16,6 @@ public class MeltingMesh : MonoBehaviour {
 		gameObject.GetComponent<MeshFilter>().mesh = mesh;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
