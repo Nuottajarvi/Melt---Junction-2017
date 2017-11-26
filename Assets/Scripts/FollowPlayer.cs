@@ -16,7 +16,6 @@ public class FollowPlayer : MonoBehaviour {
 		float rot = (Mathf.Abs(follow.rotation.z) - 0.25f) * 2;
 		float minx = 0f;
 		float maxx = 0.48f;
-		Debug.Log(rot);
 		transform.localPosition = new Vector3(minx + (maxx - minx) * rot, transform.localPosition.y, transform.localPosition.z);
 	}
 }

@@ -8,6 +8,7 @@ public class TongueController : MonoBehaviour
     public float minPos;
     public float maxPos;
     public float LickPeriod = 0.5f;
+	public Face face;
 
     public LayerMask CollideWith;
 
@@ -29,7 +30,7 @@ public class TongueController : MonoBehaviour
 
     public void Lick()
     {
-        if (lickAllowed)
+        if (lickAllowed && !GameController.instance.gameOver)
             StartCoroutine(LickRoutine());
     }
 
@@ -37,7 +38,8 @@ public class TongueController : MonoBehaviour
     {
         lickAllowed = false;
         animator.SetTrigger("Lick");
-        yield return new WaitForFixedUpdate();
+		Surprise();
+			yield return new WaitForFixedUpdate();
         // var hitCount = Physics.OverlapBoxNonAlloc(transform.position,
         //                                         tongueCollider.size * transform.localScale.x / 2, hitDrops,
         //                                         this.transform.rotation, CollideWith, QueryTriggerInteraction.UseGlobal);
@@ -54,6 +56,7 @@ public class TongueController : MonoBehaviour
 
         foreach (var item in drops)
         {
+			GameController.instance.score++;
             Destroy(item);
         }
         drops.Clear();
@@ -70,7 +73,6 @@ public class TongueController : MonoBehaviour
     HashSet<GameObject> drops = new HashSet<GameObject>();
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("dsfad");
         drops.Add(other.gameObject);
     }
 
@@ -78,4 +80,11 @@ public class TongueController : MonoBehaviour
     {
         drops.Remove(other.gameObject);
     }
+
+	void Surprise() {
+		if (face.surprisedTrigger > 0)
+			face.surprisedTrigger = 0.99f;
+		else
+			face.surprisedTrigger = 1.5f;
+	}
 }

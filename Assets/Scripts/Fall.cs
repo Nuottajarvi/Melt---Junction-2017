@@ -34,7 +34,7 @@ public class Fall : MonoBehaviour {
 			speed += Time.deltaTime * 3;
 		}
 
-		if(transform.position.y < -4) {
+		if(transform.position.y < -6) {
 			GameController.instance.health--;
 			Destroy(gameObject);
 		}
