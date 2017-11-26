@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54980746254055750}
   - component: {fileID: 65430201299651114}
   - component: {fileID: 96410965761424588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ TrailRenderer:
   m_GameObject: {fileID: 1651739505510918}
   m_Enabled: 1
   m_CastShadows: 0
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
@@ -195,7 +195,7 @@ TrailRenderer:
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 1
+    alignment: 0
     textureMode: 2
     generateLightingData: 0
   m_MinVertexDistance: 0.1

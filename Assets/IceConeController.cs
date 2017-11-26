@@ -32,7 +32,7 @@ public class IceConeController : MonoBehaviour
         //coneBody.AddTorque(new Vector3(0, lastSwipe, 0), ForceMode.VelocityChange);
     }
 
-    public void LickTapped(float pos)
+    public void LickTapped(Vector2 pos)
     {
         tongue.SetPos(pos);
 		tongue.Lick();

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SwipeHandler : Selectable, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class SwipeHandler : Selectable, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public float Coefficient;
     Vector2 startPosition;
@@ -20,6 +20,7 @@ public class SwipeHandler : Selectable, IBeginDragHandler, IDragHandler, IEndDra
     {
         if (!interactable)
             return;
+        leftDeadZone = false;
         startPosition = eventData.position;
     }
 
@@ -46,9 +47,10 @@ public class SwipeHandler : Selectable, IBeginDragHandler, IDragHandler, IEndDra
         {
             iceCone.SwipeDone();
         }
-        else
-        {
-            iceCone.LickTapped(eventData.position.y);
-        }
+    }
+
+    public void OnPointerClick(PointerEventData pointerEventData)
+    {
+        iceCone.LickTapped(pointerEventData.position);
     }
 }
